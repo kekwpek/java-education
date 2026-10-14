@@ -10,13 +10,19 @@ public class Main {
         int result = calc.add(2, 3);
         int result2 = calc.sub(10, 4);
         int result3 = calc.mul(7, 6);
+        try {
+            int result4 = calc.div(10, 0); // ошибка деления на 0
+            System.out.println("Результат деления: " + result4);
+        } catch (ArithmeticException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
 
         // выводим результат на экран
         System.out.println("Результат: " + result);
         System.out.println("Результат вычитания: " + result2);
         System.out.println("Результат умножения: " + result3);
         System.out.println("Деление 10 / 2: " + calc.div(10, 2));
-        System.out.println("Деление 10 / 0: " + calc.div(10, 0));
-gity
+        // System.out.println("Деление 10 / 0: " + calc.div(10, 0));
+
     }
 }
